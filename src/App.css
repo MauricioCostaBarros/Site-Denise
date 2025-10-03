@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #689F38; /* Verde natural */
+  --primary-dark: #558B2F;
+  --secondary-color: #FDF8F0; /* Bege suave de fundo */
+  --text-color: #333;
+  --heading-color: #424242;
+  --white: #fff;
+  
+  --font-heading: 'Lora', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding-top: 70px; /* Espaço para o header fixo */
+  color: var(--text-color);
+  background-color: var(--white);
+}
+
+/* --- ESTA É A CLASSE QUE FAZ A MÁGICA --- */
+/* A linha "margin: 0 auto;" centraliza o conteúdo na tela. */
+.container {
+  max-width: 1100px; /* Largura máxima do conteúdo */
+  margin: 0 auto;     /* Centraliza horizontalmente */
+  padding: 0 20px;   /* Espaçamento nas laterais para telas menores */
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #757575;
+  margin-top: -30px;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Header --- */
+.header {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* --- Herói --- */
+.hero {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* Altura total menos o header */
+  padding: 60px 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+.cta-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+/* --- Sobre --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+/* --- How It Works --- */
+#how-it-works {
+  background-color: var(--secondary-color);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+.step-card {
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.step-number {
+  background-color: var(--primary-color);
+  color: var(--white);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.step-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--heading-color);
+}
+
+.services-grid {
+    display: flex;          
+    flex-wrap: wrap;       
+    justify-content: center;
+    gap: 30px;              
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.service-card {
+    flex-basis: 320px; 
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+.service-card h3 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    margin-top: 0;
+}
+
+/* --- Contato --- */
+#contact {
+  background-color: var(--secondary-color);
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--white);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+.social-link {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+.modal-title {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 992px) {
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image {
+    order: -1;
+    margin-bottom: 40px;
+  }
+  .about-image {
+    margin: 0 auto 40px;
+    max-width: 250px;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+    body { padding-top: 60px; }
+    .header { height: 60px; }
+    .nav-menu { display: none; } /* Em um projeto futuro, aqui entraria um menu hamburguer */
+    .hero { min-height: auto; }
+    .hero-text h1 { font-size: 2.5rem; }
+}
+
+/* === ESTILOS ADICIONAIS PARA O FORMULÁRIO DE CONTATO === */
+
+.contact-form h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  /* Escondemos o label visualmente, mas o mantemos para acessibilidade */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-color);
+  box-sizing: border-box; /* Essencial para o padding não quebrar o layout */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito ao clicar no campo */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(104, 159, 56, 0.2); /* Usa a cor primária com transparência */
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite que o usuário aumente a altura */
+  min-height: 120px;
+}
+
+/* Estilo do botão dentro do formulário */
+.contact-form .cta-button {
+  width: 100%;
+  padding: 15px;
+}
