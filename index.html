@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo-nutri.png" /> 
@@ -9,11 +9,18 @@
   <body>
     <div id="root"></div>
 
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form 
+      name="contact" 
+      netlify 
+      netlify-honeypot="bot-field" 
+      hidden
+      action="/obrigado"
+    >
       <input type="text" name="name" />
       <input type="tel" name="phone" />
       <textarea name="message"></textarea>
     </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
