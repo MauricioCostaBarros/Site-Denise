@@ -27,11 +27,9 @@ const Contact = () => {
               </a>
             </div>
           </div>
-
-          {/* Coluna da Direita: Formulário */}
           <div className="contact-form">
             <h3>Envie uma mensagem</h3>
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" action="/obrigado">
               <input type="hidden" name="form-name" value="contact" />
               
               <div className="form-group">
