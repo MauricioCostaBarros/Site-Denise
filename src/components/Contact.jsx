@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Importando ícones para usar no formulário
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
@@ -10,8 +9,6 @@ const Contact = () => {
         <h2 className="section-title">Entre em Contato</h2>
         <p className="section-subtitle">Vamos começar sua jornada para uma vida mais saudável? Me envie uma mensagem!</p>
         <div className="contact-grid">
-          
-          {/* Coluna da Esquerda: Informações */}
           <div className="contact-info">
             <h3>Informações de Contato</h3>
             <p>
