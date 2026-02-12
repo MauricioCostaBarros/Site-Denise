@@ -131,12 +131,16 @@ body {
   background-color: var(--heading-color);
 }
 
-/* --- HERO SECTION (Desktop) --- */
+/* --- HERO SECTION --- */
 .hero {
-  /* Mantendo seu gradiente original e extensão .png */
-  background: linear-gradient(to right,rgba(68, 123, 41, 0.464) 0%, rgba(35, 65, 20, 0.1) 100%), url('/hero-background.png');
-  background-size: cover;
-  background-position: center; 
+  /* Mantendo rigorosamente o seu gradiente e o arquivo .png */
+  background: linear-gradient(to right, rgba(68, 123, 41, 0.315) 0%, rgba(35, 65, 20, 0.1) 100%), url('/hero-background.png');
+  
+  /* Zoom de 130% para maior nitidez */
+  background-size: 130%; 
+  
+  /* Ajustado: 75% (mais para o meio) e 25% (puxa a imagem para baixo para não sumir no topo) */
+  background-position: 75% 25%; 
   background-repeat: no-repeat;
   
   display: flex;
@@ -499,26 +503,16 @@ body {
       margin: 16px 0;
     }
 
-    /* Hero Mobile */
+    /* Hero Mobile - Mantido conforme sua versão funcional */
     .hero {
-      /* CORREÇÃO DO FUNDO MOBILE: */
-      /* Gradiente de cima (claro) para baixo (escuro) para garantir leitura do texto que fica no centro/baixo */
-      background: linear-gradient(to bottom, rgba(68, 123, 41, 0.1) 0%, rgba(68, 123, 41, 0.493) 100%), url('/hero-background.png');
-      
-      /* O SEGREDO (COVER): Garante que a imagem preencha TODO o fundo, sem cortar em cima ou embaixo */
-      background-size: cover; 
-      
-      /* FOCA NA COMIDA: Mantém o foco no lado direito onde está o prato */
+      background: linear-gradient(rgba(68, 123, 41, 0.1) 0%, rgba(68, 123, 41, 0.377)), url('/hero-background.png');
       background-position: 80% center; 
-      
       justify-content: center;
       text-align: center;
       padding-left: 0;
-      
-      /* Garante altura suficiente para o zoom não parecer estranho */
       min-height: auto; 
-      padding-top: 100px; 
-      padding-bottom: 100px;
+      padding-top: 80px; 
+      padding-bottom: 80px;
     }
     
     .hero-text {
