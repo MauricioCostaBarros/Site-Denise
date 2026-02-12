@@ -3,7 +3,7 @@
 :root {
   --primary-color: #689F38; /* Verde natural */
   --primary-dark: #558B2F;
-  --secondary-color: #FDF8F0; /* Bege suave de fundo */
+  --secondary-color: #FDF8F0; /* Bege suave */
   --text-color: #333;
   --heading-color: #424242;
   --white: #fff;
@@ -27,16 +27,26 @@ body {
   background-color: var(--white);
 }
 
-/* --- ESTA É A CLASSE QUE FAZ A MÁGICA --- */
-/* A linha "margin: 0 auto;" centraliza o conteúdo na tela. */
 .container {
-  max-width: 1100px; /* Largura máxima do conteúdo */
-  margin: 0 auto;     /* Centraliza horizontalmente */
-  padding: 0 20px;   /* Espaçamento nas laterais para telas menores */
+  max-width: 1100px; 
+  margin: 0 auto;     
+  padding: 0 20px;   
 }
 
 .section {
   padding: 80px 0;
+}
+
+/* === ALTERNÂNCIA DE CORES DE FUNDO === */
+#services, 
+#contact,
+#home { 
+  background-color: var(--secondary-color);
+}
+
+#about,
+#how-it-works {
+  background-color: var(--white);
 }
 
 .section-title {
@@ -72,84 +82,134 @@ body {
   display: flex;
   align-items: center;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+
 .nav-logo {
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--primary-color);
   text-decoration: none;
 }
+
 .nav-menu {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
+  padding: 0;
 }
+
 .nav-link {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
   transition: color 0.3s;
 }
+
 .nav-link:hover {
   color: var(--primary-color);
 }
+
+/* Hambúrguer */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--heading-color);
+}
+
+/* --- HERO SECTION (Desktop) --- */
 .hero {
-  background-color: var(--secondary-color);
+  /* Mantendo seu gradiente original e extensão .png */
+  background: linear-gradient(to right,rgba(68, 123, 41, 0.464) 0%, rgba(35, 65, 20, 0.1) 100%), url('/hero-background.png');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  
   display: flex;
   align-items: center;
   min-height: calc(100vh - 70px); 
   padding-bottom: 60px; 
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  align-items: center;
-  gap: 50px;
+
+.hero .container {
+  width: 100%;
 }
+
+/* Removemos elementos antigos */
+.hero-grid { display: block; width: 100%; }
+.hero-image { display: none; }
+
+.hero-text {
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  max-width: 650px; 
+  margin-left: 0;   
+  padding-left: 0;
+  color: var(--white);
+}
+
 .hero-text h1 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem; 
-  color: var(--heading-color);
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.2rem; 
+  color: var(--white);
+  margin-bottom: 25px;
+  line-height: 1.2; 
+  letter-spacing: -1px;
+  
+  text-align: left;
+  max-width: 15ch; 
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
-.hero-text h1 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem; 
-  color: var(--heading-color);
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
+
 .hero-text p {
   font-size: 1.2rem;
-  margin-bottom: 40px;
-  line-height: 1.7;
+  margin-bottom: 45px;
+  line-height: 1.6;
+  color: #f1f8e9;
+  font-weight: 400;
+  max-width: 90%; 
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
-.hero-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-}
+
 .cta-button {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 15px 35px;
-  border-radius: 50px;
+  padding: 18px 45px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
   display: inline-block;
+  border: none;
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+
 .cta-button:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 /* --- Sobre --- */
@@ -164,11 +224,12 @@ body {
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
+.about-text p {
+  text-align: justify;
+  line-height: 1.7;    
+}
 
 /* --- How It Works --- */
-#how-it-works {
-  background-color: var(--secondary-color);
-}
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -176,10 +237,11 @@ body {
   text-align: center;
 }
 .step-card {
-  background-color: var(--white);
+  background-color: var(--secondary-color);
   padding: 40px 30px;
   border-radius: 10px;
-  box-shadow: var(--shadow);
+  box-shadow: none;
+  border: 1px solid #eee;
 }
 .step-number {
   background-color: var(--primary-color);
@@ -200,6 +262,7 @@ body {
   color: var(--heading-color);
 }
 
+/* --- Serviços --- */
 .services-grid {
     display: flex;          
     flex-wrap: wrap;       
@@ -215,9 +278,6 @@ body {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-}
-
-.service-card {
     flex-basis: 320px; 
 }
 
@@ -232,9 +292,6 @@ body {
 }
 
 /* --- Contato --- */
-#contact {
-  background-color: var(--secondary-color);
-}
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -243,6 +300,47 @@ body {
     padding: 50px;
     border-radius: 10px;
     box-shadow: var(--shadow);
+}
+.contact-form h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-group label {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-color);
+  box-sizing: border-box; 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(104, 159, 56, 0.2); 
+}
+.form-group textarea {
+  resize: vertical; 
+  min-height: 120px;
+}
+.contact-form .cta-button {
+  width: 100%;
+  padding: 15px;
 }
 .social-links {
   margin-top: 30px;
@@ -266,18 +364,19 @@ body {
     padding: 30px 0;
 }
 
-/* --- Modal --- */
+/* --- Modal (com Blur) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 .modal-content {
     background: var(--white);
@@ -287,57 +386,72 @@ body {
     width: 90%;
     position: relative;
     box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
 }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .modal-content p {
     text-align: justify; 
     line-height: 1.7;    
 }
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+}
+.modal-title {
+    color: var(--primary-color);
+    margin-top: 0;
+}
 
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
+/* --- Botão WhatsApp --- */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
 }
-.modal-title {
-    color: var(--primary-color);
-    margin-top: 0;
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
 }
-.modal-title {
-    color: var(--primary-color);
-    margin-top: 0;
-}
+
+/* --- Responsividade (Media Queries) --- */
 @media (max-width: 992px) {
-  .hero-grid, .about-grid {
+  .about-grid {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-  .hero-image {
-    order: -1;
-    margin-bottom: 40px;
   }
   .about-image {
     margin: 0 auto 40px;
     max-width: 250px;
   }
-  .about-text p {
-  text-align: justify;
-  line-height: 1.7;    
-}
   .steps-grid {
     grid-template-columns: 1fr;
   }
@@ -349,66 +463,81 @@ body {
 @media (max-width: 768px) {
     body { padding-top: 60px; }
     .header { height: 60px; }
-    .nav-menu { display: none; } /* Em um projeto futuro, aqui entraria um menu hamburguer */
-    .hero { min-height: auto; }
-    .hero-text h1 { font-size: 2.5rem; }
-}
+    
+    .hamburger {
+      display: block;
+    }
 
-/* === ESTILOS ADICIONAIS PARA O FORMULÁRIO DE CONTATO === */
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
-.contact-form h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--heading-color);
-  margin-top: 0;
-  margin-bottom: 20px;
-}
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 60px; 
+      gap: 0;
+      flex-direction: column;
+      background-color: var(--white);
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
 
-.form-group {
-  margin-bottom: 20px;
-  position: relative;
-}
+    .nav-menu.active {
+      left: 0;
+    }
 
-.form-group label {
-  /* Escondemos o label visualmente, mas o mantemos para acessibilidade */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+    .nav-item {
+      margin: 16px 0;
+    }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--text-color);
-  box-sizing: border-box; /* Essencial para o padding não quebrar o layout */
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
+    /* Hero Mobile */
+    .hero {
+      /* CORREÇÃO DO FUNDO MOBILE: */
+      /* Gradiente de cima (claro) para baixo (escuro) para garantir leitura do texto que fica no centro/baixo */
+      background: linear-gradient(to bottom, rgba(68, 123, 41, 0.1) 0%, rgba(68, 123, 41, 0.493) 100%), url('/hero-background.png');
+      
+      /* O SEGREDO (COVER): Garante que a imagem preencha TODO o fundo, sem cortar em cima ou embaixo */
+      background-size: cover; 
+      
+      /* FOCA NA COMIDA: Mantém o foco no lado direito onde está o prato */
+      background-position: 80% center; 
+      
+      justify-content: center;
+      text-align: center;
+      padding-left: 0;
+      
+      /* Garante altura suficiente para o zoom não parecer estranho */
+      min-height: auto; 
+      padding-top: 100px; 
+      padding-bottom: 100px;
+    }
+    
+    .hero-text {
+      align-items: center; 
+      text-align: center;
+      padding-left: 0;
+      margin: 0 auto;
+      max-width: 100%;
+    }
 
-/* Efeito ao clicar no campo */
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(104, 159, 56, 0.2); /* Usa a cor primária com transparência */
-}
-
-.form-group textarea {
-  resize: vertical; /* Permite que o usuário aumente a altura */
-  min-height: 120px;
-}
-
-/* Estilo do botão dentro do formulário */
-.contact-form .cta-button {
-  width: 100%;
-  padding: 15px;
+    .hero-text h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      max-width: 100%;
+    }
+    
+    .hero-text p {
+      text-align: center;
+      font-size: 1rem;
+      max-width: 100%;
+    }
 }

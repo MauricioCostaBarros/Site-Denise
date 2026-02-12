@@ -1,21 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Header = () => {
+function Header() {
+  const [active, setActive] = useState(false);
+
+  const toggleMenu = () => {
+    setActive(!active);
+  };
+
   return (
     <header className="header">
-      <div className="container">
-        <nav className="navbar">
-          <a href="#hero" className="nav-logo">Nutri Denise Barros</a>
-          <ul className="nav-menu">
-            <li><a href="#about" className="nav-link">Sobre</a></li>
-            <li><a href="#how-it-works" className="nav-link">Como Funciona</a></li>
-            <li><a href="#services" className="nav-link">Serviços</a></li>
-            <li><a href="#contact" className="nav-link">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav className="container navbar">
+        <a href="#" className="nav-logo">Nutri Denise Barros</a>
+        
+        {/* Ícone do Menu Hambúrguer (só aparece no mobile via CSS) */}
+        <div className={`hamburger ${active ? "active" : ""}`} onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        {/* Menu de Navegação */}
+        <ul className={`nav-menu ${active ? "active" : ""}`}>
+          <li className="nav-item">
+            <a href="#home" className="nav-link" onClick={toggleMenu}>Início</a>
+          </li>
+          <li className="nav-item">
+            <a href="#about" className="nav-link" onClick={toggleMenu}>Sobre</a>
+          </li>
+          <li className="nav-item">
+            <a href="#services" className="nav-link" onClick={toggleMenu}>Serviços</a>
+          </li>
+          <li className="nav-item">
+            <a href="#how-it-works" className="nav-link" onClick={toggleMenu}>Como Funciona</a>
+          </li>
+          <li className="nav-item">
+            <a href="#contact" className="nav-link" onClick={toggleMenu}>Contato</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
-};
+}
 
 export default Header;

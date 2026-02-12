@@ -1,35 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// Passamos a função `onServiceClick` como uma "propriedade" para o componente
-const Services = ({ onServiceClick }) => { 
-  
-  const servicesData = [
-    { title: "Nutrição Clínica", description: "Através de uma abordagem personalizada, avalio sua saúde através de exames e/ou sintomas, hábitos alimentares e necessidades individuais para criar estratégias nutricionais e suplementação se necessário, promovendo bem-estar, qualidade de vida e reestabelecimento da saúde." },
-    { title: "Emagrecimento", description: "Nada de passar fome ou viver de dietas impossíveis! Aqui, o foco é um emagrecimento prazeroso e sustentável, respeitando seu corpo e sua rotina. Te ensino a se alimentar de forma equilibrada e conquistar resultados realmente duradouros." },
-    { title: "Nutrição Estética", description: "Sabe aquela flacidez que incomoda, a celulite aparente, as unhas fracas ou os cabelos ralos? Tudo isso está diretamente ligado à sua alimentação! Com a nutrição e estratégias certas, é possível melhorar a firmeza da pele, reduzir inflamações, estimular a produção de colágeno e devolver força e brilho para cabelos e unhas. Eu te ajudo a cuidar da sua beleza de dentro para fora, com equilíbrio e sem soluções temporárias." },
-    { title: "Saúde da Mulher", description: "Seu corpo muda ao longo da vida, e a nutrição precisa acompanhar essas fases! Cansaço excessivo, inchaço, alterações hormonais, TPM intensa, falta de libido... nada disso é normal. Seja para equilibrar hormônios, aliviar sintomas da TPM, menopausa, melhorar a fertilidade ou simplesmente se sentir mais disposta e confiante, a nutrição pode ser sua grande aliada. Com uma abordagem leve e personalizada, te ajudo a entender suas necessidades e cuidar da sua saúde em todas as fases da vida. Você merece se sentir bem todos os dias!" },
-    { title: "Atendimento presencial e online", description: "Atendimento presencial realizado no Metrô Jabaquara na cidade de São Paulo e atendimento online para todo Brasil." }
+function Services() {
+  const [selectedService, setSelectedService] = useState(null);
+
+  const services = [
+    {
+      id: 1,
+      title: "Emagrecimento Definitivo",
+      description: "Perca peso sem dietas restritivas. Foco em reeducação alimentar e mudança de hábitos.",
+      details: "Nosso programa de emagrecimento não foca apenas na balança, mas na sua composição corporal e saúde metabólica. Você receberá um plano alimentar flexível, estratégias para lidar com a fome emocional e acompanhamento contínuo para garantir que os resultados sejam sustentáveis a longo prazo."
+    },
+    {
+      id: 2,
+      title: "Hipertrofia e Performance",
+      description: "Estratégias nutricionais para ganho de massa muscular e melhor desempenho nos treinos.",
+      details: "A nutrição é o combustível do seu treino. Desenvolvemos protocolos específicos de pré e pós-treino, suplementação inteligente (quando necessária) e ajuste de macronutrientes para maximizar sua força, recuperação muscular e ganho de massa magra."
+    },
+    {
+      id: 3,
+      title: "Nutrição Funcional",
+      description: "Tratamento de desequilíbrios, alergias e melhora da imunidade através dos alimentos.",
+      details: "A nutrição funcional rastreia a causa raiz dos seus sintomas. Seja enxaqueca, fadiga, problemas intestinais ou alergias, utilizamos alimentos específicos para desinflamar seu corpo, melhorar sua microbiota intestinal e restaurar sua vitalidade."
+    },
+    {
+      id: 4,
+      title: "Saúde da Mulher",
+      description: "Acompanhamento especializado para TPM, SOP, menopausa e gestação.",
+      details: "Cada fase da vida da mulher exige cuidados nutricionais específicos. Atuamos no controle de sintomas da TPM, suporte nutricional para Síndrome do Ovário Policístico (SOP), preparação para engravidar, gestação saudável e alívio dos sintomas da menopausa."
+    }
   ];
 
   return (
     <section id="services" className="section">
       <div className="container">
-        <h2 className="section-title">Serviços</h2>
+        <h2 className="section-title">Meus Serviços</h2>
+        <p className="section-subtitle">
+          Escolha o plano ideal para o seu momento de vida. Clique nos cards para saber mais.
+        </p>
+
         <div className="services-grid">
-          {servicesData.map(service => (
+          {services.map((service) => (
             <div 
-              key={service.title} 
+              key={service.id} 
               className="service-card"
-              onClick={() => onServiceClick(service)}
+              onClick={() => setSelectedService(service)}
             >
               <h3>{service.title}</h3>
-              <p>Clique para saber mais</p>
+              <p>{service.description}</p>
+              <span style={{color: 'var(--primary-color)', fontSize: '0.9rem', fontWeight: 'bold'}}>
+                Ler mais &rarr;
+              </span>
             </div>
           ))}
         </div>
+
+        {/* Lógica do Modal: Só aparece se houver um serviço selecionado */}
+        {selectedService && (
+          <div className="modal-overlay" onClick={() => setSelectedService(null)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="modal-close" 
+                onClick={() => setSelectedService(null)}
+              >
+                &times;
+              </button>
+              <h3 className="modal-title">{selectedService.title}</h3>
+              <p>{selectedService.details}</p>
+              <br />
+              <a href="#contact" className="cta-button" onClick={() => setSelectedService(null)}>
+                Agendar este serviço
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
-};
+}
 
 export default Services;
