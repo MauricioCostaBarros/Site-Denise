@@ -131,15 +131,9 @@ body {
   background-color: var(--heading-color);
 }
 
-/* --- HERO SECTION --- */
 .hero {
-  /* Mantendo rigorosamente o seu gradiente e o arquivo .png */
   background: linear-gradient(to right, rgba(68, 123, 41, 0.315) 0%, rgba(35, 65, 20, 0.1) 100%), url('/hero-background.png');
-  
-  /* Zoom de 130% para maior nitidez */
   background-size: 130%; 
-  
-  /* Ajustado: 75% (mais para o meio) e 25% (puxa a imagem para baixo para não sumir no topo) */
   background-position: 75% 25%; 
   background-repeat: no-repeat;
   
@@ -153,7 +147,6 @@ body {
   width: 100%;
 }
 
-/* Removemos elementos antigos */
 .hero-grid { display: block; width: 100%; }
 .hero-image { display: none; }
 
@@ -504,15 +497,16 @@ body {
     }
 
     /* Hero Mobile - Mantido conforme sua versão funcional */
-    .hero {
-      background: linear-gradient(rgba(68, 123, 41, 0.1) 0%, rgba(68, 123, 41, 0.377)), url('/hero-background.png');
+   .hero {
+      background: linear-gradient(to bottom,  rgba(68, 123, 41, 0.1) 0%, rgba(35, 65, 20, 0.380) 100%), url('/hero-background.png');
+      background-size: cover; 
       background-position: 80% center; 
       justify-content: center;
       text-align: center;
       padding-left: 0;
       min-height: auto; 
-      padding-top: 80px; 
-      padding-bottom: 80px;
+      padding-top: 100px; 
+      padding-bottom: 100px;
     }
     
     .hero-text {
