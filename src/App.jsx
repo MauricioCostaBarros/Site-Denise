@@ -6,7 +6,7 @@ import Services from './components/Services';
 import HowItWorks from './components/Howitworks';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import './App.css'; // Importa os estilos globais
+import './App.css'; 
 
 function App() {
   return (
@@ -18,8 +18,7 @@ function App() {
       <HowItWorks />
       <Contact />
       <Footer />
-
-      {/* Botão Flutuante do WhatsApp */}
+      
       <a 
         href="https://wa.me/5511971437105?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20consulta."
         className="whatsapp-float"
