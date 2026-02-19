@@ -13,11 +13,11 @@ const Contact = () => {
             <h3>Informações de Contato</h3>
             <p>
               <strong>Atendimento presencial:</strong><br />
-              Green Work Boulevard Jabaquara - Av. Eng. Armando de Arruda Pereira, 2937 - Jabaquara, São Paulo
+              Av. Eng. Armando de Arruda Pereira, 2937 - Jabaquara, São Paulo
             </p>
             <p><strong>Atendimentos Online para todo Brasil.</strong></p>
             <p><strong>Telefone:</strong> (11) 99313-2104</p>
-            <p><strong>Email:</strong> nutridenisebarros@gmail.com</p>
+            <p><strong>Email:</strong> contato@nutridenisebarros.com.br</p>
             <div className="social-links">
               <a href="https://wa.me/5511993132104" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
                 <FaWhatsapp />
