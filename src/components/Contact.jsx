@@ -12,10 +12,14 @@ const Contact = () => {
           <div className="contact-info">
             <h3>Informações de Contato</h3>
             <p>
-              <strong>Atendimento presencial:</strong><br />
-              Av. Eng. Armando de Arruda Pereira, 2937 - Jabaquara, São Paulo
+              <strong>Atendimento 100% Online</strong><br />
+              <p>
+                O formato Online oferece:
+                <li>Flexibilidade de agenda</li>
+                <li>Atendimento em qualquer localidade</li>
+                <li>Praticidade e organização</li>
+              </p>
             </p>
-            <p><strong>Atendimentos Online para todo Brasil.</strong></p>
             <p><strong>Telefone:</strong> (11) 99313-2104</p>
             <p><strong>Email:</strong> contato@nutridenisebarros.com.br</p>
             <div className="social-links">

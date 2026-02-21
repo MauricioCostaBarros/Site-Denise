@@ -10,8 +10,10 @@ const About = () => {
           </div>
           <div className="about-text">
             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>Sobre Mim</h2>
-            <p>Sou Nutricionista Especialista em Nutrição Clínica e Estética. Cuido de você de forma integral ouvindo com atenção seus sintomas e queixas, observando a sua energia, seu bem-estar e sua autoestima.</p>
-            <p>A nutrição vai além da alimentação, ela abraça seu corpo, sua mente e sua rotina. Meu compromisso é te guiar por um caminho de equilíbrio e auto cuidado, aliviando e tratando as suas queixas, proporcionando a você mais saúde, vitalidade e confiança!</p>
+            <p>Sou nutricionista clínica com atuação voltada à saúde da mulher em suas diferentes fases da vida. Minha prática é fundamentada em evidências científicas e conduzida por avaliação clínica criteriosa.</p>
+            <p>Cada plano nutricional é estruturado a partir da análise do histórico de saúde, padrão alimentar, exames laboratoriais e objetivos individuais, respeitando as particularidades do metabolismo feminino.</p>
+            <p>Atendo mulheres que buscam melhora consistente da composição corporal, equilíbrio metabólico e suporte às alterações hormonais, por meio de acompanhamento técnico, individualizado e seguro.</p>
+            <p>O atendimento é realizado de forma 100% online, com responsabilidade profissional e acompanhamento contínuo.</p>
           </div>
         </div>
       </div>

@@ -10,8 +10,8 @@ function Header() {
   return (
     <header className="header">
       <nav className="container navbar">
-        <a href="#" className="nav-logo">Nutri Denise Barros</a>
-        
+        <a href="#" className="nav-logo">Denise Barros</a>
+      
         {/* Ícone do Menu Hambúrguer (só aparece no mobile via CSS) */}
         <div className={`hamburger ${active ? "active" : ""}`} onClick={toggleMenu}>
           <span className="bar"></span>
@@ -28,7 +28,7 @@ function Header() {
             <a href="#about" className="nav-link" onClick={toggleMenu}>Sobre</a>
           </li>
           <li className="nav-item">
-            <a href="#services" className="nav-link" onClick={toggleMenu}>Serviços</a>
+            <a href="#services" className="nav-link" onClick={toggleMenu}>Área de Atuação</a>
           </li>
           <li className="nav-item">
             <a href="#how-it-works" className="nav-link" onClick={toggleMenu}>Como Funciona</a>

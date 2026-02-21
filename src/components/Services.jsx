@@ -6,37 +6,29 @@ function Services() {
   const services = [
     {
       id: 1,
-      title: "Emagrecimento Definitivo",
-      description: "Perca peso sem dietas restritivas. Foco em reeducação alimentar e mudança de hábitos.",
-      details: "Nosso programa de emagrecimento não foca apenas na balança, mas na sua composição corporal e saúde metabólica. Você receberá um plano alimentar flexível, estratégias para lidar com a fome emocional e acompanhamento contínuo para garantir que os resultados sejam sustentáveis a longo prazo."
+      title: "Saúde da Mulher",
+      description: "Abordagem nutricional estruturada para mulheres em diferentes fases da vida.",
+      details: "Abordagem nutricional estruturada para mulheres em diferentes fases da vida, considerando alterações hormonais, impactos metabólicos e inflamatórios, e mudanças na composição corporal."
     },
     {
       id: 2,
-      title: "Hipertrofia e Performance",
-      description: "Estratégias nutricionais para ganho de massa muscular e melhor desempenho nos treinos.",
-      details: "A nutrição é o combustível do seu treino. Desenvolvemos protocolos específicos de pré e pós-treino, suplementação inteligente (quando necessária) e ajuste de macronutrientes para maximizar sua força, recuperação muscular e ganho de massa magra."
+      title: "Performance Metabólica",
+      description: "Planejamento nutricional direcionado à redução de gordura, recomposição corporal e suporte à hipertrofia.",
+      details: "Planejamento nutricional direcionado à redução de gordura, recomposição corporal e suporte à hipertrofia, com foco na preservação e desenvolvimento de massa magra, otimização metabólica e organização alimentar sustentável."
     },
     {
       id: 3,
-      title: "Nutrição Funcional",
-      description: "Tratamento de desequilíbrios, alergias e melhora da imunidade através dos alimentos.",
-      details: "A nutrição funcional rastreia a causa raiz dos seus sintomas. Seja enxaqueca, fadiga, problemas intestinais ou alergias, utilizamos alimentos específicos para desinflamar seu corpo, melhorar sua microbiota intestinal e restaurar sua vitalidade."
+      title: "Tratamento da Obesidade",
+      description: "Conduta nutricional para mulheres em tratamento clínico da obesidade, incluindo o uso de medicamentos injetáveis.",
+      details: "Conduta nutricional para mulheres em tratamento clínico da obesidade, incluindo o uso de medicamentos injetáveis, como os análogos de GLP-1, com foco na preservação de massa magra, adequação proteica e manutenção do equilíbrio metabólico."
     },
-    {
-      id: 4,
-      title: "Saúde da Mulher",
-      description: "Acompanhamento especializado para TPM, SOP, menopausa e gestação.",
-      details: "Cada fase da vida da mulher exige cuidados nutricionais específicos. Atuamos no controle de sintomas da TPM, suporte nutricional para Síndrome do Ovário Policístico (SOP), preparação para engravidar, gestação saudável e alívio dos sintomas da menopausa."
-    }
   ];
 
   return (
     <section id="services" className="section">
       <div className="container">
-        <h2 className="section-title">Meus Serviços</h2>
-        <p className="section-subtitle">
-          Escolha o plano ideal para o seu momento de vida. Clique nos cards para saber mais.
-        </p>
+        <h2 className="section-title">Áreas de Atuação</h2>
+        <br />
 
         <div className="services-grid">
           {services.map((service) => (
