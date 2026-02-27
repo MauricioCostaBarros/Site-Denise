@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
@@ -7,19 +6,21 @@ const Contact = () => {
     <section id="contact" className="section">
       <div className="container">
         <h2 className="section-title">Entre em Contato</h2>
-        <p className="section-subtitle">Vamos começar sua jornada para uma vida mais saudável? Me envie uma mensagem!</p>
+        <p className="section-subtitle">Vamos começar sua jornada para uma vida mais saudável?</p>
         <div className="contact-grid">
           <div className="contact-info">
             <h3>Informações de Contato</h3>
-            <p>
-              <strong>Atendimento 100% Online</strong><br />
-              <p>
-                O formato Online oferece:
+            
+            <div className="contact-online-box">
+              <strong>Atendimento 100% Online</strong>
+              <p>O formato Online oferece:</p>
+              <ul className="contact-list">
                 <li>Flexibilidade de agenda</li>
                 <li>Atendimento em qualquer localidade</li>
                 <li>Praticidade e organização</li>
-              </p>
-            </p>
+              </ul>
+            </div>
+
             <p><strong>Telefone:</strong> (11) 99313-2104</p>
             <p><strong>Email:</strong> contato@nutridenisebarros.com.br</p>
             <div className="social-links">
@@ -31,6 +32,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
+          
           <div className="contact-form">
             <h3>Envie uma mensagem</h3>
             <form name="contact" method="POST" data-netlify="true" action="/obrigado">

@@ -10,7 +10,10 @@ function Header() {
   return (
     <header className="header">
       <nav className="container navbar">
-        <a href="#" className="nav-logo">Denise Barros</a>
+<a href="#home" className="nav-logo" style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
+  Denise Barros
+  <span className="crn-text">CRN 3-82573</span>
+</a>
       
         {/* Ícone do Menu Hambúrguer (só aparece no mobile via CSS) */}
         <div className={`hamburger ${active ? "active" : ""}`} onClick={toggleMenu}>

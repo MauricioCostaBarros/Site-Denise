@@ -12,13 +12,13 @@ function Services() {
     },
     {
       id: 2,
-      title: "Performance Metabólica",
+      title: "Metabolismo",
       description: "Planejamento nutricional direcionado à redução de gordura, recomposição corporal e suporte à hipertrofia.",
       details: "Planejamento nutricional direcionado à redução de gordura, recomposição corporal e suporte à hipertrofia, com foco na preservação e desenvolvimento de massa magra, otimização metabólica e organização alimentar sustentável."
     },
     {
       id: 3,
-      title: "Tratamento da Obesidade",
+      title: "Obesidade",
       description: "Conduta nutricional para mulheres em tratamento clínico da obesidade, incluindo o uso de medicamentos injetáveis.",
       details: "Conduta nutricional para mulheres em tratamento clínico da obesidade, incluindo o uso de medicamentos injetáveis, como os análogos de GLP-1, com foco na preservação de massa magra, adequação proteica e manutenção do equilíbrio metabólico."
     },
@@ -59,9 +59,11 @@ function Services() {
               <h3 className="modal-title">{selectedService.title}</h3>
               <p>{selectedService.details}</p>
               <br />
-              <a href="#contact" className="cta-button" onClick={() => setSelectedService(null)}>
-                Agendar este serviço
-              </a>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <a href="#contact" className="cta-button" onClick={() => setSelectedService(null)}>
+                  Agendar este serviço
+                </a>
+              </div>
             </div>
           </div>
         )}

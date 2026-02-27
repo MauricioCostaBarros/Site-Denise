@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap');
 
-/* --- REGRA DE OURO DO CSS: Impede que paddings e bordas engordem e estourem os elementos --- */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -9,7 +9,7 @@
   --primary-color: #689F38;
   --primary-dark: #558B2F;
   --primary-light: rgba(104, 159, 56, 0.1);
-  --secondary-color: #FDF8F0;
+  --secondary-color: #8888881d; /* cor antiga #FDF8F0*/
   --text-color: #333;
   --heading-color: #424242;
   --white: #fff;
@@ -112,6 +112,17 @@ body {
   letter-spacing: -0.5px; 
 }
 
+.crn-text {
+  font-family: var(--font-body); 
+  font-size: 0.7rem; 
+  font-weight: 500;
+  color: var(--primary-color); 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px; 
+  text-align: center; 
+}
+
 .nav-menu { 
   list-style: none; 
   display: flex; 
@@ -158,7 +169,7 @@ body {
 
 .hero-container { 
   /* Aumentei a opacidade de 0.3 para 0.7 no início e de 0.1 para 0.6 no final */
-  background: linear-gradient(to right, rgba(38, 36, 36, 0.378) 0%, rgba(58, 62, 55, 0.674) 100%), url('/foto-hero3.png'); 
+  background: linear-gradient(to left, rgba(38, 36, 36, 0.484) 0%, rgba(58, 62, 55, 0.674) 100%), url('/foto-hero3.png'); 
   background-size: cover; 
   background-position: center; 
   border-radius: 30px; 
@@ -198,6 +209,7 @@ body {
   line-height: 1.6; 
   color: rgba(255,255,255,0.9); 
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+  text-align: justify;
 }
 
 .cta-button { 
@@ -253,7 +265,7 @@ body {
 }
 
 .about-text p { 
-  text-align: center; 
+  text-align: justify; 
   line-height: 1.8; 
   color: #555; 
 }
@@ -305,6 +317,7 @@ body {
   color: #555; 
   line-height: 1.6; 
   flex-grow: 1; 
+  text-align: center; 
 }
 
 /* --- Services --- */
@@ -350,6 +363,7 @@ body {
   line-height: 1.6; 
   flex-grow: 1; 
   margin-bottom: 20px;
+  text-align: center !important; /* Volta para o alinhamento centralizado sem esticar as palavras */
 }
 
 /* --- Contact --- */
@@ -436,6 +450,7 @@ body {
   color: #555; 
   line-height: 1.8; 
   font-size: 1.1rem;
+  text-align: justify;
 }
 
 /* --- Footer & Modal & Elements --- */
@@ -642,6 +657,8 @@ body {
   .nav-logo { 
     font-size: 1.3rem; 
   }
+
+
   
   .section { 
     padding: 25px 0; 
@@ -688,7 +705,7 @@ body {
   }
   
   .hero-text p { 
-    text-align: center; 
+    text-align: justify; 
     font-size: 1.05rem; 
     margin-bottom: 30px;
   }
@@ -710,7 +727,7 @@ body {
   }
   
   .about-text p { 
-    text-align: center; 
+    text-align: justify; 
     font-size: 1.05rem; 
   } 
   
@@ -731,6 +748,10 @@ body {
   .step-card { 
     padding: 30px 20px; 
   }
+
+  .step-card p {
+    text-align: center !important; /* Tira a justificação no mobile */
+  }
   
   .step-number { 
     width: 55px; 
@@ -745,7 +766,7 @@ body {
   }
   
   .contact-info p { 
-    text-align: center; 
+    text-align: justify; 
     font-size: 1rem; 
   }
   
@@ -774,5 +795,33 @@ body {
   .footer { 
     margin-top: 10px; 
     padding: 10px 0 30px; 
+  }
+
+  .service-card p, 
+  .hero-text p, 
+  .about-text p, 
+  .contact-info p, 
+  .modal-content p {
+    text-align: center !important;
+  }
+}
+
+/* Ajuste para evitar a quebra do menu na transição entre 992px e 1100px */
+@media (min-width: 993px) and (max-width: 1150px) {
+  .navbar {
+    padding: 0 15px; /* Reduz o respiro lateral do menu */
+  }
+
+  .nav-menu {
+    gap: 15px; /* Diminui o espaço entre os links (Home, Sobre, etc) */
+  }
+
+  .nav-link {
+    padding: 8px 10px; /* Diminui o tamanho dos botões do menu */
+    font-size: 0.9rem; /* Diminui levemente a letra dos links */
+  }
+
+  .nav-logo {
+    font-size: 1.3rem; /* Diminui um pouco o nome Denise Barros nesta faixa */
   }
 }
