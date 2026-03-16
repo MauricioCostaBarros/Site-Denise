@@ -168,7 +168,6 @@ body {
 }
 
 .hero-container { 
-  /* Aumentei a opacidade de 0.3 para 0.7 no início e de 0.1 para 0.6 no final */
   background: linear-gradient(to left, rgba(38, 36, 36, 0.484) 0%, rgba(58, 62, 55, 0.674) 100%), url('/foto-hero3.png'); 
   background-size: cover; 
   background-position: center; 
@@ -363,7 +362,7 @@ body {
   line-height: 1.6; 
   flex-grow: 1; 
   margin-bottom: 20px;
-  text-align: center !important; /* Volta para o alinhamento centralizado sem esticar as palavras */
+  text-align: center !important; 
 }
 
 /* --- Contact --- */

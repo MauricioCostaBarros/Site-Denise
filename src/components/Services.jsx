@@ -45,8 +45,6 @@ function Services() {
             </div>
           ))}
         </div>
-
-        {/* Lógica do Modal: Só aparece se houver um serviço selecionado */}
         {selectedService && (
           <div className="modal-overlay" onClick={() => setSelectedService(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>

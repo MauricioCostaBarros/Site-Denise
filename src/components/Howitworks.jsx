@@ -5,8 +5,7 @@ const HowItWorks = () => {
     <section id="how-it-works" className="section">
       <div className="container">
         <h2 className="section-title">Como Funciona o Atendimento</h2>
-        
-        {/* Ajuste de textos justificados e alinhamentos corretos */}
+      
         <div style={{ maxWidth: '800px', margin: '0 auto 60px auto', textAlign: 'justify', color: '#555', lineHeight: '1.8' }}>
           <h4 style={{ textAlign: 'center', color: 'var(--heading-color)', marginBottom: '10px', fontSize: '1.2rem' }}>Consulta Individual</h4>
           <p style={{ marginBottom: '30px' }}>
