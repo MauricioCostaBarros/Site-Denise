@@ -168,7 +168,7 @@ body {
 }
 
 .hero-container { 
-  background: linear-gradient(to left, rgba(38, 36, 36, 0.484) 0%, rgba(58, 62, 55, 0.674) 100%), url('/foto-hero3.png'); 
+  background: linear-gradient(to left, rgba(38, 36, 36, 0.484) 0%, rgba(58, 62, 55, 0.674) 100%), url('/foto-hero3.webp'); 
   background-size: cover; 
   background-position: center; 
   border-radius: 30px; 
@@ -805,22 +805,21 @@ body {
   }
 }
 
-/* Ajuste para evitar a quebra do menu na transição entre 992px e 1100px */
 @media (min-width: 993px) and (max-width: 1150px) {
   .navbar {
-    padding: 0 15px; /* Reduz o respiro lateral do menu */
+    padding: 0 15px; 
   }
 
   .nav-menu {
-    gap: 15px; /* Diminui o espaço entre os links (Home, Sobre, etc) */
+    gap: 15px; 
   }
 
   .nav-link {
-    padding: 8px 10px; /* Diminui o tamanho dos botões do menu */
-    font-size: 0.9rem; /* Diminui levemente a letra dos links */
+    padding: 8px 10px; 
+    font-size: 0.9rem; 
   }
 
   .nav-logo {
-    font-size: 1.3rem; /* Diminui um pouco o nome Denise Barros nesta faixa */
+    font-size: 1.3rem; 
   }
 }

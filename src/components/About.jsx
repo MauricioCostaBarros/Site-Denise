@@ -6,7 +6,7 @@ const About = () => {
       <div className="container">
         <div className="about-grid">
           <div className="about-image">
-            <img src="/foto-denise.jpg" alt="Nutricionista Denise Barros" />
+            <img src="/foto-denise.webp" alt="Nutricionista Denise Barros" />
           </div>
           <div className="about-text">
             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>Sobre Mim</h2>
