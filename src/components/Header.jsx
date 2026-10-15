@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -9,35 +9,81 @@ function Header() {
 
   return (
     <header className="header">
-      <nav className="container navbar">
-<a href="#home" className="nav-logo" style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
-  Denise Barros
-  <span className="crn-text">CRN 3-82573</span>
-</a>
-      
+      <nav
+        className="container navbar"
+        aria-label="Navegação principal"
+        onKeyDown={(event) => {
+          if (event.key === "Escape") setActive(false);
+        }}
+      >
+        <a href="#home" className="nav-logo">
+          Denise Barros
+          <span className="crn-text">CRN 3-82573</span>
+        </a>
+
         {/* Ícone do Menu Hambúrguer (só aparece no mobile via CSS) */}
-        <div className={`hamburger ${active ? "active" : ""}`} onClick={toggleMenu}>
+        <button
+          type="button"
+          className={`hamburger ${active ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-expanded={active}
+          aria-controls="navigation-menu"
+          aria-label={active ? "Fechar menu" : "Abrir menu"}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </div>
+        </button>
 
         {/* Menu de Navegação */}
-        <ul className={`nav-menu ${active ? "active" : ""}`}>
+        <ul
+          id="navigation-menu"
+          className={`nav-menu ${active ? "active" : ""}`}
+        >
           <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={toggleMenu}>Início</a>
+            <a
+              href="#home"
+              className="nav-link"
+              onClick={() => setActive(false)}
+            >
+              Início
+            </a>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={toggleMenu}>Sobre</a>
+            <a
+              href="#about"
+              className="nav-link"
+              onClick={() => setActive(false)}
+            >
+              Sobre
+            </a>
           </li>
           <li className="nav-item">
-            <a href="#services" className="nav-link" onClick={toggleMenu}>Área de Atuação</a>
+            <a
+              href="#services"
+              className="nav-link"
+              onClick={() => setActive(false)}
+            >
+              Área de Atuação
+            </a>
           </li>
           <li className="nav-item">
-            <a href="#how-it-works" className="nav-link" onClick={toggleMenu}>Como Funciona</a>
+            <a
+              href="#how-it-works"
+              className="nav-link"
+              onClick={() => setActive(false)}
+            >
+              Como Funciona
+            </a>
           </li>
           <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={toggleMenu}>Contato</a>
+            <a
+              href="#contact"
+              className="nav-link"
+              onClick={() => setActive(false)}
+            >
+              Contato
+            </a>
           </li>
         </ul>
       </nav>
